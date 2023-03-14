@@ -42,7 +42,7 @@ class Agent:
         # sample action a according to current policy pi and current state s
         _, policy_dist = self.ActorCriticNet(state)
 
-        # sample an action
+        # sample an action according to a distribution
         action_probabilities = categorical_distribution(policy_dist)
         action = action_probabilities.sample()
 
@@ -91,6 +91,8 @@ class Agent:
             # the policy network should be updated only slightly
             # in response to the received reward.
             log_prop = action_probabilities.log_prob(self.last_action_took)
+
+
 
             # Boostrapped Target value
             # 1-int(done) in case of terminal state, as the terminal state value is 0, as no rewards follow the terminal state

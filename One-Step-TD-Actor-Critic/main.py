@@ -19,8 +19,7 @@ def plot_learning_curve(x, scores, figure_file):
 
 
 if __name__ == '__main__':
-    env = gym.make('CartPole-v1')
-
+    env = gym.make('CartPole-v1', render_mode="human")
     agent = Agent(n_actions=env.action_space.n, shared_learning_rate=1e-5)
     n_games = 1800
 
