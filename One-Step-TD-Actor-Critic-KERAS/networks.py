@@ -56,7 +56,7 @@ class ActorCriticSharedNetwork(object):
         policy = Dense(self.n_actions, activation='softmax')(fc2)
 
 
-        # Custom ACtor loss function
+        # Custom Actor loss function
         # y_true is one hot repr of action took [0,1,0,0]
         def custom_loss(y_true, y_pred):
             # so we dont log of zero which is inf

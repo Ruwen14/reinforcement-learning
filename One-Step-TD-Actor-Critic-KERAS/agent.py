@@ -24,6 +24,7 @@ class Agent(object):
         self.n_actions = n_actions
 
         self.actor, self.critic, self.policy = ActorCriticSharedNetwork(self.alpha, self.beta, self.n_actions, self.fc1_dims, self.fc2_dims, self.state_dims).model()
+
         # [0,1,2,3]
         self.action_space = [action for action in range(self.n_actions)]
 

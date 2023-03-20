@@ -35,7 +35,7 @@ class ActorCriticSharedNetwork(keras.Model):
         # Given a state, it outputs the probability distribution
         # over the n- output actions (n_actions)
         # softmax needed to normalize distribution from 0.0 to 1.0
-        self.policy =Dense(n_actions, activation='softmax')
+        self.policy = Dense(n_actions, activation='softmax')
 
     # Forward function from pytorch
     def call(self, state):
