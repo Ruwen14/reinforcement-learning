@@ -28,13 +28,13 @@ class Agent:
         self.ActorCriticNet.compile(optimizer=Adam(learning_rate=shared_learning_rate))
 
     # obervation might only partially describe the state
-    # by clearning up observation we get state
+    # by clearning up state we get state
     #
 
     # in the CartPole example the observatoin is
     # [position of cart, velocity of cart, angle of pole, rotation rate of pole]
     def choose_action(self, observation):
-        # make observation [4 entries ] to tensor [1,4], adding extra
+        # make state [4 entries ] to tensor [1,4], adding extra
         # dimension
         state = tf.convert_to_tensor([observation])
 

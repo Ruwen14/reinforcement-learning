@@ -11,6 +11,11 @@ from agent import Agent
 import numpy as np
 import matplotlib.pyplot as plt
 
+
+
+# Entropy for Exploration is missing in this exmample.
+
+
 def plot_learning_curve(x, scores, figure_file):
     running_avg = np.zeros(len(scores))
     for i in range(len(running_avg)):
@@ -27,7 +32,7 @@ if __name__ == '__main__':
     score_history = []
     num_episodes = 2000
 
-    # N-Episodes
+    # T_transitions-Episodes
     for i in range(num_episodes):
         done = False
         score = 0

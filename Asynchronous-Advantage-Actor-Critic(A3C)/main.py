@@ -27,6 +27,7 @@ from agent import Agent
 
 # For A2C see https://github.com/grantsrb/PyTorch-A2C/tree/master/a2c
 
+# Entropy for Exploration is missing in this exmample.
 
 
 if __name__ == '__main__':
@@ -37,7 +38,7 @@ if __name__ == '__main__':
     N_GAMES = 3000
     UPDATE_AFTER_N_STEPS = 10
 
-    # Global Actor-Critic Network. This should approach a Optimum after N-Games,
+    # Global Actor-Critic Network. This should approach a Optimum after T_transitions-Games,
     # which are played by our parallel agents.
     global_actor_critic = ActorCriticNetwork(state_dims=state_dims,
                                              n_actions=n_actions)

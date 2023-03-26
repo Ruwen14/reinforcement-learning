@@ -35,7 +35,7 @@ if __name__ == '__main__':
         agent.ActorCriticNet.load_model()
 
 
-    # N-Episodes
+    # T_transitions-Episodes
     for game in range(n_games):
         # Sample initial State for episode
         state = env.reset()[0]

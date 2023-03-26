@@ -48,7 +48,7 @@ class Agent(T.multiprocessing.Process):
                 next_state, reward, done, info, _ = self.local_env.step(action)
                 score += reward
 
-                # save transition to our N-step big batch
+                # save transition to our T_transitions-step big batch
                 self.local_ActorCriticNetwork.append_experience_batch(state, action, reward)
 
                 # After n-steps of raoming in our environment, use the accumulated n-step-batch-of-Transitions for the

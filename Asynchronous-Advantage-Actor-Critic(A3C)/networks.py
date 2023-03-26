@@ -60,7 +60,7 @@ class ActorCriticNetwork(nn.Module):
 
         # In the standard A3C algorithm, the value function is estimated using a one-step lookahead,
         # meaning that it is estimated as the immediate reward plus the estimated value of the next state.
-        # However, in an n-step version of A3C, we save our transitions in form of a N-step big Batch, with  regard
+        # However, in an n-step version of A3C, we save our transitions in form of a T_transitions-step big Batch, with  regard
         # to, we do our update.
         self.rewards = []
         self.actions = []
@@ -138,7 +138,7 @@ class ActorCriticNetwork(nn.Module):
 
 
     def accumulate_n_step_loss(self, done):
-        # All of these values have a Tensor shape of [1, N-size]
+        # All of these values have a Tensor shape of [1, T_transitions-size]
 
 
 
@@ -153,7 +153,7 @@ class ActorCriticNetwork(nn.Module):
         policies, state_values = self.forward(states)
         state_values = state_values.squeeze()
 
-        # adjust N-step-state-value /advantage-predicitions according to prediction error TD_Error
+        # adjust T_transitions-step-state-value /advantage-predicitions according to prediction error TD_Error
         # Basically the mean squarred error between the n-step-target_values and our state_values
         n_step_temporal_diff = n_step_target_values - state_values
         n_step_critic_loss = n_step_temporal_diff**2
