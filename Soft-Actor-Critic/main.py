@@ -24,6 +24,10 @@ import matplotlib.pyplot as plt
 from agent import Agent
 
 
+# Implementation based on https://www.youtube.com/watch?v=YKhkTOU0l20
+# Equal Implementatino in PyTorch: https://www.youtube.com/watch?v=ioidsRlf79o&t=3129s
+
+# Much clearer implementation all SAC V1 & V2 in PyTorch:
 #***************************************************************************************************************************************************************
 # For a waaaaay better implementation of SAC V1 see https://github.com/pranz24/pytorch-soft-actor-critic/blob/SAC_V/sac.py
 # It has the SAC V2 with the ommited state value function and automiatic temperature tuning: https://github.com/pranz24/pytorch-soft-actor-critic/blob/master/sac.py
